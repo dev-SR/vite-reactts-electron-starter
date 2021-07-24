@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"main": "main/index.js",
 	"author": {
-		"name": "Maximilian Stümpfl"
+		"name": "dev-SR"
 	},
 	"description": "Starter using Vite 2+ React +Typescript + Electron for fast prototyping.",
 	"keywords": [
@@ -20,8 +20,9 @@
 	"scripts": {
 		"dev": "concurrently \"yarn dev:vite\" \" yarn dev:electron\"",
 		"dev:vite": "vite",
-		"dev:electron": "concurrently \"npm run build:electron\" \"nodemon --exec electron .\"",
-		"build:electron": "tsc -w -p electron",
+		"dev:electron": "concurrently \"npm run watch:electron\" \"nodemon --exec electron .\"",
+		"watch:electron": "tsc -w -p electron",
+		"build:electron": "tsc -p electron",
 		"build": "npm run build:vite && npm run build:electron",
 		"build:vite": "vite build",
 		"dist": "npm run build && electron-builder",
